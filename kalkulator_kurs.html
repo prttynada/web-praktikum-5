@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Kalkulator kurs nada</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: rgb(167, 252, 185);
+                background-image: url("koran_kurs.png");
+                background-repeat: no-repeat;
+                background-position: right;
+            }
+
+            h1 {
+                color: rgb(146, 207, 140);
+                text-align: center;
+            }
+
+            table, td, tr, th {
+                border: 1px solid rgb(48, 31, 8);
+                background-color: rgb(151, 222, 144);
+                text-align: center;
+            }
+            input, select {
+                background-color: rgb(151, 222, 144);
+            }
+            div {
+                border: 2px dashed burlywood;
+                width: 30em;
+                height: 30em;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 5px;
+                background-color: rgb(36, 87, 31);
+                display: inline-block;
+            }
+            button {
+                background-color: rgb(127, 219, 118);
+            }
+            div img {
+                width: 10em;
+                height: 10em;
+                margin-top: 150px;
+            }
+            .st {
+                width: 20em;
+                height: 20em;
+                margin-left: -150px;
+            }
+
+            .cat {
+                width: 25em;
+                height: 25em;
+                margin-left: 200px;
+                margin-bottom: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Kalkulator kurs</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Masukkan Nilai</th>
+                    <th>Valas</th>
+                    <th>Nilai Rupiah</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" class="inputan"></td>
+                    <td>
+                        <select id="valas">
+                            <option value="0">---Pilih---</option>
+                            <option value="9915" class="valasUS">Dollar US</option>
+                            <option value="13472" class="valasSngpr">Dollar Singapore</option>
+                            <option value="874" class="valasRnggt">Ringgit Malaysia</option>
+                            <option value="120" class="valasYn">Yen Japan</option>
+                            <option value="15888" class="valasEr">Euro</option>
+                            <option value="3592" class="valasRyl">Riyal Arab Saudi</option>
+                        </select>
+                    </td>
+                    <td class="nilaiRp">0</td>
+                </tr>
+            </tbody>
+            <button class="ubah">Convert</button>
+        </table>
+        <img src="amg_kurs.png" alt="">
+        <img src="amg_kurs.png" alt="">
+        </div>
+        <img src="st_kurs.png" alt="" class="st">
+        <img src="cat_kurs.png" alt="" class="cat">
+        
+
+        <script>
+            let Valas = document.getElementById("valas");
+            let Inputan = document.querySelector(".inputan");
+            let Nilai = document.querySelector(".nilaiRp");
+            let Btn_ubah = document.querySelector(".ubah");
+
+            Btn_ubah.addEventListener("click", function() {
+                Nilai.innerHTML = parseInt(Inputan.value) * parseInt(Valas.value);
+            })
+        </script>
+    </body>
+</html>
